@@ -1,0 +1,4 @@
+httpx==0.28.1
+feedparser==6.0.14
+prompt_toolkit==3.0.50
+mutagen==1.48.1

@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "podcast-downloader"
+dynamic = ["version"]
+description = "Subscribe to podcasts and download episodes as named, tagged audio files, from an interactive terminal app or the command line."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.13"
+dependencies = [
+    "httpx>=0.28",
+    "feedparser>=6.0",
+    "prompt_toolkit>=3.0",
+    "mutagen>=1.47",
+]
+classifiers = [
+    "Environment :: Console",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Topic :: Multimedia :: Sound/Audio",
+]
+
+[project.urls]
+Homepage = "https://github.com/super-massive-code/Podcast_Downloader_CLI"
+
+[project.scripts]
+podcast = "podcast_downloader.cli:main"
+
+[tool.setuptools]
+packages = ["podcast_downloader"]
+
+[tool.setuptools.dynamic]
+version = {attr = "podcast_downloader.__version__"}
